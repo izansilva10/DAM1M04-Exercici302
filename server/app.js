@@ -17,7 +17,7 @@ if (!isProxmox) {
     host: '127.0.0.1',
     port: 3306,
     user: 'root',
-    password: 'root',
+    password: 'A-038012-o',
     database: 'sakila'
   });
 } else {
