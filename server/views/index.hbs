@@ -17,14 +17,18 @@
           <div class="movie-card">
             {{#if @first}}
               <img src="/imatges/movie1.jpg" alt="{{title}}" class="movie-poster">
-            {{else if @index 1}}
-              <img src="/imatges/movie2.jpg" alt="{{title}}" class="movie-poster">
-            {{else if @index 2}}
-              <img src="/imatges/movie3.jpg" alt="{{title}}" class="movie-poster">
-            {{else if @index 3}}
-              <img src="/imatges/movie4.jpg" alt="{{title}}" class="movie-poster">
             {{else}}
-              <img src="/imatges/movie5.jpg" alt="{{title}}" class="movie-poster">
+              {{#if @index}}
+                {{#if (eq @index 1)}}
+                  <img src="/imatges/movie2.jpg" alt="{{title}}" class="movie-poster">
+                {{else if (eq @index 2)}}
+                  <img src="/imatges/movie3.jpg" alt="{{title}}" class="movie-poster">
+                {{else if (eq @index 3)}}
+                  <img src="/imatges/movie4.jpg" alt="{{title}}" class="movie-poster">
+                {{else}}
+                  <img src="/imatges/movie5.jpg" alt="{{title}}" class="movie-poster">
+                {{/if}}
+              {{/if}}
             {{/if}}
             <h3>{{title}} ({{release_year}})</h3>
             <p><strong>Actors:</strong> {{actors}}</p>
