@@ -1,41 +1,34 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
   {{> header}}
-  <link rel="stylesheet" href="index.css">
-  <title>Escola programació</title>
+  <title>Pàgina principal - Sakila</title>
 </head>
 <body>
   {{> menu}}
 
-  <main class="container">
-    <h1>Escola de programació</h1>
+  <main>
+    <h1>Base de dades Sakila</h1>
 
-    <section class="cols-2">
-      <article class="card">
-        <h2>Cursos</h2>
+    <section>
+      <h2>🎬 Pel·lícules (5 primeres)</h2>
+      <div class="movie-list">
+        {{#each movies}}
+          <div class="movie-card">
+            <h3>{{title}} ({{release_year}})</h3>
+            <p><strong>Actors:</strong> {{actors}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </section>
 
-        <ul class="list">
-          {{#each cursos}}
-            <li class="list-item">
-              <strong>{{nom}}</strong><br>
-              <span class="muted">{{tematica}}</span>
-            </li>
-          {{/each}}
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Especialitats</h2>
-
-        <ul class="list">
-          {{#each especialitats}}
-            <li class="list-item">
-              {{nom}}
-            </li>
-          {{/each}}
-        </ul>
-      </article>
+    <section>
+      <h2>Categories (5 primeres)</h2>
+      <ul>
+        {{#each categories}}
+          <li>{{name}}</li>
+        {{/each}}
+      </ul>
     </section>
   </main>
 

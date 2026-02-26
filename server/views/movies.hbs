@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{> header}}
+  <title>Pel·lícules - Sakila</title>
+</head>
+<body>
+  {{> menu}}
+
+  <main>
+    <h1>Llistat de pel·lícules (15 primeres)</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Títol</th>
+          <th>Any</th>
+          <th>Duració</th>
+          <th>Preu</th>
+          <th>Actors</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each movies}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{release_year}}</td>
+          <td>{{length}} min</td>
+          <td>{{rental_rate}} €</td>
+          <td>{{actors}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </main>
+
+  {{> footer}}
+</body>
+</html>
