@@ -10,9 +10,10 @@
   <main>
     <h1>Llistat de pel·lícules (15 primeres)</h1>
 
-    <table>
+    <table class="movies-table">
       <thead>
         <tr>
+          <th>Caràtula</th>
           <th>Títol</th>
           <th>Any</th>
           <th>Duració</th>
@@ -23,7 +24,22 @@
       <tbody>
         {{#each movies}}
         <tr>
-          <td>{{title}}</td>
+          <td>
+            {{#if @first}}
+              <img src="/imatges/movie1.jpg" alt="{{title}}" class="movie-poster-small">
+            {{else if @index 1}}
+              <img src="/imatges/movie2.jpg" alt="{{title}}" class="movie-poster-small">
+            {{else if @index 2}}
+              <img src="/imatges/movie3.jpg" alt="{{title}}" class="movie-poster-small">
+            {{else if @index 3}}
+              <img src="/imatges/movie4.jpg" alt="{{title}}" class="movie-poster-small">
+            {{else if @index 4}}
+              <img src="/imatges/movie5.jpg" alt="{{title}}" class="movie-poster-small">
+            {{else}}
+              <div class="no-poster-small">🎬</div>
+            {{/if}}
+          </td>
+          <td><strong>{{title}}</strong></td>
           <td>{{release_year}}</td>
           <td>{{length}} min</td>
           <td>{{rental_rate}} €</td>
